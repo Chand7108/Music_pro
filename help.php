@@ -1,20 +1,25 @@
-
+<?php
+echo "this is Help page";
+?>
 <!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content = "width= device-width, initial-scale = 1, maximum-scale=1" />
-	<title>Music-Pro </title>
-	<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
-	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<title>MUSIC PRO</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Mixtape template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 </head>
 <body>
-	<div class="super_container">
-		<div class="background_image" style="background-image:url(images/music3.jpg); height:fill" ></div>
+
+<div class="super_container">
 	
 	<!-- Header -->
 	<header class="header">
@@ -69,15 +74,6 @@
 			</div>
 		</div>
 	</div>
-	<form>
-	<div class="container" style="width: 450px;">
-	<label for="uname"><b>Username</b></label>
-	<input type="text" name="uname" placeholder="Enter Username" required>
-	<label for="password"><b>Password</b></label>
-	<input type="password" name="password" placeholder="Enter Password" required>
-	<button type="submit">Login</button>
-	<button type="button" class="cancelbtn">Cancel</button>
-	<span class="password"><a href="#"><b>Forgot password?   </b></a><a href="register.php"><b>Don't have an account?</b></a></span></div></form>
-	
+</div>
 </body>
 </html>
