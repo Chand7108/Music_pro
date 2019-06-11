@@ -652,6 +652,9 @@ section
 {
 	padding-top: 108px;
 	padding-bottom: 130px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
 }
 .elements_title
 {

@@ -1196,3 +1196,7 @@ span.password {
     margin-right: 250px;
   }
 }
+main.container{
+	float: bottom;
+	color: #456789;
+}

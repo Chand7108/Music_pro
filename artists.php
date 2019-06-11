@@ -1,5 +1,7 @@
 <?php
-echo "this is artists page";
+include('config.php');
+$data = mysqli_query($con,"SELECT * FROM artists") or
+		die(mysqli_error("No records found"));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +16,7 @@ echo "this is artists page";
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/elements.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 </head>
 <body>
@@ -74,6 +76,16 @@ echo "this is artists page";
 			</div>
 		</div>
 	</div>
+
+    <div class = "elements">
+    	<?php while($row = mysqli_fetch_array($data))
+    	{ ?>
+    		<img src="source.php?id=1" alt="img" />
+    		<p><?php echo $row['artist_name']; ?></p>
+
+    	<?php } ?>
+</div>
 </div>
 </body>
 </html>
+
