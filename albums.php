@@ -1,8 +1,11 @@
 <?php
+session_start();
 include('config.php');
-echo "this is albums page";
-$data = mysqli_query($con,"SELECT * FROM albums") or
-		die(mysqli_error("No records found"));
+	if(isset($_GET['album'])){
+		
+	}
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

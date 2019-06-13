@@ -1,4 +1,6 @@
-<?php include('config.php') ?>
+<?php 
+include('config.php');
+?>
 
 <!DOCTYPE html>
 <head>
@@ -69,25 +71,48 @@
 		</div>
 	</div>
 </div>
-<form>
 	<div class="container" style="width: 450px;">
-	<form name="register" method="post" onSubmit="return validate();" action="register.php">
-		<label for="name"><b>Name</b></label>
-		<input type="text" name="name" placeholder="Enter your name" required>
-		<label for="email"><b>Email</b></label>
-		<input type="text" name="email" placeholder="Enter your email id" required>
-		<label for="uname"><b>User ID</b></label>
-		<input type="text" name="uname" placeholder="Enter your user id" required>
-		<label for="password"><b>Password</b></label>
-		<input type="password" name="password" placeholder="Enter your password" id="pwd" required>
-		<label for="confirmPassword"><b>Confirm Password</b></label>
-		<input type="password" name="password" placeholder="Please confirm password" id="cofirmpsw" required>
-		<button type="submit">Register</button></form>
-		<script type="text/javascript">
-			function validate()
+		<?php 
+		//pre_r($_POST);
+		if(isset($_POST['submit'])){
+			$name = mysqli_real_escape_string($con,$_POST['name']);
+			$email = mysqli_real_escape_string($con,$_POST['email']);
+			$username = mysqli_real_escape_string($con,$_POST['uname']);
+			$password = mysqli_real_escape_string($con,md5($_POST['password']));
+			$confirmpassword = mysqli_real_escape_string($con,$_POST['confirmpassword']);
+			$bool = true;
+			$query = mysqli_query($con,"SELECT * FROM users");
+			while($row = mysqli_fetch_array($query))
 			{
-				var password = document.getElementById("pwd").value;
-				var confirm = document.getElementById("confirmpsw").value;
+				$table_users = $row['user_name'];
+				if($username == $table_users)
+				{
+					$bool = false;
+				 	Print '<script>alert("Username is already taken!");</script>';
+				 	Print '<script>window.location.assign("register.php");</script>';
+				}
+			}
+			if($bool)
+			{
+				mysqli_query($con,"INSERT INTO users(user_name,user_email,user_password,name) VALUES ('$username','$email','$password','$name')") or die(mysqli_error($con));
+				Print '<script>alert("Sucessfully registered");</script>';
+				Print '<script>window.location.assign("register.php");</script>';
+			}
+		}
+		?>
+	<form method="post" name="register" action="register.php" onSubmit="return validate(this)">
+		Name :<input type="text" name="name" placeholder="Enter your name" required>
+		Email : <input type="text" name="email" placeholder="Enter your email id" required>
+		User ID :<input type="text" name="uname" placeholder="Enter your user id" required>
+		Password :<input type="password" name="password" placeholder="Enter your password" required>
+		Confirm Password :<input type="password" name="confirmpassword" placeholder="Please confirm password" required>
+		<button type="submit" value="Register" name="submit">Register</button>
+	</form>
+		<script type="text/javascript">
+			function validate(form)
+			{
+				password = form.password.value;
+				confirm = form.confirmpassword.value;
 				if(password != confirm)
 				{
 					alert("Passwords do not match");
@@ -98,3 +123,12 @@
 		</script>
 </body>
 </html>
+
+<?php
+//var_dump($_POST);
+function pre_r($array)
+{
+	echo "<pre>";
+	print_r($array);
+	echo "</pre>";
+}

@@ -72,15 +72,40 @@ include('config.php');
 			</div>
 		</div>
 	</div>
-	<form>
 	<div class="container" style="width: 450px;">
+		<?php
+	//var_dump($_POST);
+	session_start();
+	if(isset($_POST['submit']))
+	{
+		$username = mysqli_real_escape_string($con,$_POST['uname']) or die(mysqli_error($con));
+		$password = mysqli_real_escape_string($con,md5($_POST['password'])) or die(mysqli_error($con));
+		$query = mysqli_query($con,"SELECT * FROM users WHERE user_name = '$username' AND user_password='$password'") or die(mysqli_error($con));
+		$exists = mysqli_num_rows($query) or die(mysqli_error($con));
+		$table_user="";
+		$table_password="";
+		if($exists==1)
+		{
+			    Print '<script>alert("logged in");</script>';
+				header("location: index.php");
+		}
+		else
+		{
+			echo "<script>alert('Invalid Details');</script>";
+		}
+		
+		
+	}
+	?>
+	<form method="post" name="login" action="">
 	<label for="uname"><b>Username</b></label>
 	<input type="text" name="uname" placeholder="Enter Username" required>
 	<label for="password"><b>Password</b></label>
 	<input type="password" name="password" placeholder="Enter Password" required>
-	<button type="submit">Login</button>
-	<button type="button" class="cancelbtn">Cancel</button>
-	<span class="password"><a href="#"><b>Forgot password?   </b></a><a href="register.php"><b>Don't have an account?</b></a></span></div></form>
+	<button type="submit" name="submit" value="submit">Login</button>
+	<button type="button" class="cancelbtn" onclick="window.location.href='index.php'">Cancel</button>
+	<span class="password"><a href="#"><b>Forgot password?   </b></a><a href="register.php"><b>Don't have an account?</b></a></span></div>
+</form>
 	
 </body>
 </html>
