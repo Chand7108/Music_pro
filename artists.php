@@ -2,6 +2,9 @@
 include('config.php');
 $data = mysqli_query($con,"SELECT * FROM artists") or
 		die(mysqli_error("No records found"));
+		while($row = mysqli_fetch_assoc($data)){
+		echo "<div class='elements'><img src='images/".$row['artist_pic']."' alt='my image' width = 200px height = 200px><p>".$row['artist_name']."</p></div>";
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,14 +80,7 @@ $data = mysqli_query($con,"SELECT * FROM artists") or
 		</div>
 	</div>
 
-    <div class = "elements">
-    	<?php while($row = mysqli_fetch_array($data))
-    	{ ?>
-    		<img src="source.php?id=1" alt="img" />
-    		<p><?php echo $row['artist_name']; ?></p>
-
-    	<?php } ?>
-</div>
+    
 </div>
 </body>
 </html>

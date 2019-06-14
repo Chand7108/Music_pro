@@ -25,7 +25,12 @@
 /***********
 1. Fonts
 ***********/
-
+.elements.new p
+{
+	width: 10px;
+	height: 10px;
+	font-size: 40px;
+}
 @font-face
 {
 	font-family: 'Futura';
@@ -59,7 +64,8 @@ body
 }
 div
 {
-	display: block;
+	display: flex;
+	direction: row;
 	position: relative;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -73,7 +79,7 @@ ul
 p
 {
 	font-family: 'Futura', sans-serif;
-	font-size: 14px;
+	font-size: 20px;
 	line-height: 2.18;
 	font-weight: 400;
 	color: #FFFFFF;
@@ -155,10 +161,6 @@ h5::selection,
 h6::selection
 {
 	
-}
-img
-{
-	max-width: 100%;
 }
 button:active
 {
@@ -650,21 +652,14 @@ section
 
 .elements
 {
-	padding-top: 108px;
-	padding-bottom: 130px;
-	display: flex;
-	flex-direction: column;
-	justify-content: left;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 .elements_title
 {
 	font-size: 36px;
 	line-height: 0.75;
 }
-
-/*********************************
-6.1 Buttons
-*********************************/
 
 .buttons_container
 {
@@ -780,6 +775,10 @@ section
 	max-width: 90%;
 	overflow: hidden;
 	white-space: nowrap;
+}
+.elements p
+{
+	font-size: 20px;
 }
 .accordion::after
 {
@@ -984,196 +983,3 @@ section
 	line-height: 0.75 !important;
 }
 
-/*********************************
-6.5 Milestones
-*********************************/
-
-.milestones
-{
-	margin-top: 105px;
-}
-.milestones_row
-{
-	margin-top: 83px;
-}
-.milestone_col
-{
-	margin-bottom: 80px;
-}
-.milestone_icon
-{
-	width: 48px;
-	height: 48px;
-}
-.milestone_icon img
-{
-	max-width: 100%;
-}
-.milestone_content
-{
-	padding-left: 26px;
-}
-.milestone_counter
-{
-	font-size: 60px;
-	color: #FFFFFF;
-	line-height: 0.75;
-}
-.milestone_text
-{
-	font-size: 14px;
-	color: #FFFFFF;
-	line-height: 0.75;
-	margin-top: 24px;
-}
-
-/*********************************
-6.6 Icon Boxes
-*********************************/
-
-.icon_boxes
-{
-	margin-top: 22px;
-}
-.icon_boxes_row
-{
-	margin-top: 94px;
-}
-.ib_icon
-{
-	width: 48px;
-	height: 48px;
-}
-.ib_title
-{
-	font-size: 30px;
-	line-height: 1.2;
-	padding-left: 40px;
-}
-.ib_text
-{
-	margin-top: 34px;
-}
-
-/*********************************
-7. Footer
-*********************************/
-
-.footer
-{
-	background: #000000;
-	padding-left: 50px;
-	padding-right: 51px;
-}
-.newsletter_container
-{
-	width: 604px;
-	padding-top: 103px;
-}
-.newsletter_title
-{
-
-}
-.newsletter_form
-{
-	display: block;
-	position: relative;
-	width: 100%;
-	margin-top: 30px;
-}
-.newsletter_input
-{
-	width: 100%;
-	height: 50px;
-	background: #545454;
-	border: none;
-	outline: none;
-	padding-left: 23px;
-}
-.newsletter_input::-webkit-input-placeholder
-{
-	font-size: 12px !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input:-moz-placeholder
-{
-	font-size: 12px !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::-moz-placeholder
-{
-	font-size: 12px !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-} 
-.newsletter_input:-ms-input-placeholder
-{ 
-	font-size: 12px !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_input::input-placeholder
-{
-	font-size: 12px !important;
-	font-style: italic;
-	color: #FFFFFF !important;
-}
-.newsletter_button
-{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 139px;
-	height: 50px;
-	background: #de4f32;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	color: #FFFFFF;
-	font-size: 14px;
-}
-.footer_lists
-{
-	width: 575px;
-	padding-top: 83px;
-	padding-bottom: 5px;
-}
-.footer_list
-{
-	width: calc(100% / 3);
-}
-.footer_list_title
-{
-	font-size: 24px;
-}
-.footer_list ul
-{
-	margin-top: 23px;
-}
-.footer_list ul li:not(:last-of-type)
-{
-	margin-bottom: 9px;
-}
-.footer_list ul li a
-{
-	font-size: 14px;
-	color: #6d6d6d;
-}
-.footer_list ul li a:hover
-{
-	color: #FFFFFF;
-}
-.copyright_bar
-{
-	width: 100%;
-	height: 67px;
-	background: #000000;
-}
-.copyright_bar span
-{
-	font-size: 14px;
-	color: #6d6d6d;
-	line-height: 67px;
-}

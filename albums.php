@@ -1,11 +1,19 @@
 <?php
 session_start();
 include('config.php');
-	if(isset($_GET['album'])){
-		
+$data = mysqli_query($con,"SELECT * FROM albums") or
+		die(mysqli_error("No records found"));
+	while($row = mysqli_fetch_assoc($data)){
+		echo "<div class='elements'><input type='image' src='images/".$row['album_pic']."' alt='my image' width = 200px height = 200px onclick='songs()'><p>".$row['album_name']."</p></div>";
 	}
+	$query = mysqli_query($con,"SELECT * FROM songs");
+	echo "<script>
+			function songs()
+			{
+				document.write('songs');
+			}
+		</script>";
 
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,14 +89,7 @@ include('config.php');
 		</div>
 	</div>
 
-    <div class = "elements">
-    	<?php while($row = mysqli_fetch_array($data))
-    	{ ?>
-    		<img src="source.php?id=1" alt="img" />
-    		<p><?php echo $row['album_name']; ?></p>
-
-    	<?php } ?>
-</div>
+    
 </div>
 </body>
 </html>
