@@ -1,12 +1,11 @@
 <?php
-session_start();
 include('config.php');
-$data = mysqli_query($con,"SELECT * FROM albums") or
-		die(mysqli_error("No records found"));
-	while($row = mysqli_fetch_assoc($data)){
-		echo "<div class='elements d-flex flex-column'><input type='image' src='images/".$row['album_pic']."' alt='my image' width = 200px height = 200px><a href='viewsongs.php?id=".$row['album_id']."'>".$row['album_name']."</a></div>";
-	}
-	
+$id = $_REQUEST['id'];
+$query = mysqli_query($con,"SELECT * FROM songs WHERE album_id ='$id' ");
+while($row = mysqli_fetch_assoc($query))
+{
+	echo "<div class = 'home d-flex flex-column align-items-left justify-content-left'><img src='images/".$row['song_pic']."' alt='my image' width = 200px height = 200px><p>".$row['Song_name']."</p><audio id='audio' src='Songs/".$row['song_file']."' controls></audio></div>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,3 +85,4 @@ $data = mysqli_query($con,"SELECT * FROM albums") or
 </div>
 </body>
 </html>
+

@@ -3,7 +3,7 @@ include('config.php');
 $data = mysqli_query($con,"SELECT * FROM artists") or
 		die(mysqli_error("No records found"));
 		while($row = mysqli_fetch_assoc($data)){
-		echo "<div class='elements'><img src='images/".$row['artist_pic']."' alt='my image' width = 200px height = 200px><p>".$row['artist_name']."</p></div>";
+		echo "<div class='elements d-flex flex-column'><input type='image' src='images/".$row['artist_pic']."' alt='my image' width = 200px height = 200px><a href='artistsongs.php?id=".$row['artist_id']."'>".$row['artist_name']."</a></div>";
 	}
 ?>
 <!DOCTYPE html>

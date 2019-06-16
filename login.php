@@ -81,17 +81,16 @@ include('config.php');
 		$username = mysqli_real_escape_string($con,$_POST['uname']) or die(mysqli_error($con));
 		$password = mysqli_real_escape_string($con,md5($_POST['password'])) or die(mysqli_error($con));
 		$query = mysqli_query($con,"SELECT * FROM users WHERE user_name = '$username' AND user_password='$password'") or die(mysqli_error($con));
-		$exists = mysqli_num_rows($query) or die(mysqli_error($con));
-		$table_user="";
-		$table_password="";
-		if($exists==1)
+				
+		if($query->num_rows == 1)
 		{
-			    Print '<script>alert("logged in");</script>';
-				header("location: index.php");
+			    $_SESSION['user'] = $username;
+			    header("location: userProfile.php");
 		}
 		else
 		{
-			echo "<script>alert('Invalid Details');</script>";
+			$message = "Incorrect username or password";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 		}
 		
 		

@@ -5,7 +5,7 @@ $data = mysqli_query($con,"SELECT * FROM songs") or
 		die(mysqli_error("No records found"));
 		$image = $row['song_pic'];
 		while($row = mysqli_fetch_assoc($data)){
-		echo "<div class = 'elements d-flex flex-column align-items-left justify-content-left'><img src='images/".$row['song_pic']."' alt='my image' width = 200px height = 200px><p>".$row['Song_name']."</p><audio id='audio' src='Songs/".$row['song_file']."' controls></audio></div>";
+		echo "<div class = 'home d-flex flex-column align-items-left justify-content-left'><img src='images/".$row['song_pic']."' alt='my image' width = 200px height = 200px><p>".$row['Song_name']."</p><audio id='audio' src='Songs/".$row['song_file']."' controls></audio></div>";
 	}
 ?>
 <!DOCTYPE html>

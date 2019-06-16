@@ -34,16 +34,17 @@ $data = mysqli_query($con,"SELECT * FROM albums") or
 			<div class="logo"><a href="#">MUSIC PRO</a></div>
 			<div class="log_reg">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="login.php">Login</a></li>
-					<li><a href="register.php">Register</a></li>
+					<li><a href="logout.php">Logout</a></li>
 				</ul>
 			</div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="index.php">Home</a></li>
-					<li><a href="albums.php">Albums</a></li>
-					<li><a href="artists.php">Artists</a></li>
-					<li><a href="songs.php">Songs</a></li>
+					<li class="active"><a href="userProfile.php">Home</a></li>
+					<li><a href="useralbums.php">Albums</a></li>
+					<li><a href="userartists.php">Artists</a></li>
+					<li><a href="usersongs.php">Songs</a></li>
+					<li><a href="playlist.php">Playlists</a></li>
+					<li><a href="download.php">Dowloads</a></li>
 					<li><a href="help.php">Help</a></li>
 				</ul>
 			</nav>
@@ -65,19 +66,20 @@ $data = mysqli_query($con,"SELECT * FROM albums") or
 			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
 				<div class="menu_log_reg">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><a href="login.php">Login</a></li>
-						<li><a href="register.php">Register</a></li>
-					</ul>
+					<li><a href="logout.php">Logout</a></li>
+				</ul>
 				</div>
-				<nav class="menu_nav">
-					<ul class="d-flex flex-column align-items-start justify-content-start">
-						<li><a href="index.php">Home</a></li>
-						<li><a href="albums.php">Albums</a></li>
-						<li><a href="artists.php">Artists</a></li>
-						<li><a href="songs.php">Songs</a></li>
-						<li><a href="help.php">Help</a></li>
-					</ul>
-				</nav>
+				<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li class="active"><a href="userProfile.php">Home</a></li>
+					<li><a href="useralbums.php">Albums</a></li>
+					<li><a href="userartists.php">Artists</a></li>
+					<li><a href="usersongs.php">Songs</a></li>
+					<li><a href="playlist.php">Playlists</a></li>
+					<li><a href="download.php">Downloads</a></li>
+					<li><a href="help.php">Help</a></li>
+				</ul>
+			</nav>
 			</div>
 		</div>
 	</div>
@@ -86,3 +88,4 @@ $data = mysqli_query($con,"SELECT * FROM albums") or
 </div>
 </body>
 </html>
+
